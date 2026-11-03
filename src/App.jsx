@@ -359,7 +359,7 @@ export default function App() {
       {/* ── 7 · THE WITCH & THE MOON ── */}
       <section ref={setRef(7)} className="dark-sec" style={{ flexDirection: 'column', gap: 60, paddingTop: 110, paddingBottom: 110 }}>
         <Reveal delay={0.1}>
-          <Img src="/asset3/Fav4.png" alt="Soaked in the monsoon" style={{ width: '60%', maxWidth: 560, aspectRatio: '3/4', margin: '0 auto' }} />
+          <Img src="/asset3/Fav4.jpg" alt="Soaked in the monsoon" style={{ width: '60%', maxWidth: 560, aspectRatio: '3/4', margin: '0 auto' }} />
         </Reveal>
         <div className="trio" style={{ maxWidth: 1080, width: "100%", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
           <Reveal cls="rv" delay={0.05}>
