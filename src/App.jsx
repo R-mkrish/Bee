@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
 
 const SECTIONS = 8
+const A = import.meta.env.BASE_URL + 'asset3/'
 
 function Img({ src, alt, style, className = '' }) {
   const [err, setErr] = useState(false)
@@ -86,7 +87,7 @@ export default function App() {
       {/* ── 0 · HERO ── */}
       <section ref={setRef(0)} className="hero-wrap">
         <div className="hero-bg">
-          <img src="/asset3/us_gibli.jpg" alt="" onError={e => e.target.style.display = 'none'} />
+          <img src={A + "us_gibli.jpg"} alt="" onError={e => e.target.style.display = 'none'} />
           <div className="hero-overlay" />
         </div>
         <div className="hero-content">
@@ -113,7 +114,7 @@ export default function App() {
       <section ref={setRef(1)} style={{ background: 'var(--bg)' }}>
         <div className="two">
           <Reveal cls="rr">
-            <Img src="/asset3/01_first_sight.jpg" alt="First sight" style={{ width: '100%', aspectRatio: '3/4' }} />
+            <Img src={A + "01_first_sight.jpg"} alt="First sight" style={{ width: '100%', aspectRatio: '3/4' }} />
           </Reveal>
           <Reveal cls="rl" delay={0.18}>
             <div className="col">
@@ -152,13 +153,13 @@ export default function App() {
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <Img src="/asset3/Fav2.jpg" alt="Watching the sea" style={{ width: '100%', maxWidth: 1080, aspectRatio: '16/9' }} />
+          <Img src={A + "Fav2.jpg"} alt="Watching the sea" style={{ width: '100%', maxWidth: 1080, aspectRatio: '16/9' }} />
         </Reveal>
         <div className="tri sea-row" style={{ maxWidth: 1080, width: "100%", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10, alignItems: "start" }}>
           <Reveal cls="rv" delay={0.05}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-              <Img src="/asset3/shells.jpg" alt="Shells" style={{ aspectRatio: '1/1' }} />
-              <Img src="/asset3/03_starfish.jpg" alt="Starfish" style={{ aspectRatio: '4/5' }} />
+              <Img src={A + "shells.jpg"} alt="Shells" style={{ aspectRatio: '1/1' }} />
+              <Img src={A + "03_starfish.jpg"} alt="Starfish" style={{ aspectRatio: '4/5' }} />
             </div>
           </Reveal>
           <Reveal cls="rv" delay={0.2}>
@@ -181,8 +182,8 @@ export default function App() {
           </Reveal>
           <Reveal cls="rv" delay={0.35}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-              <Img src="/asset3/karnataka_02.jpg" alt="Karnataka" style={{ aspectRatio: '4/5' }} />
-              <Img src="/asset3/karnataka_03.jpg" alt="Karnataka" style={{ aspectRatio: '1/1' }} />
+              <Img src={A + "karnataka_02.jpg"} alt="Karnataka" style={{ aspectRatio: '4/5' }} />
+              <Img src={A + "karnataka_03.jpg"} alt="Karnataka" style={{ aspectRatio: '1/1' }} />
             </div>
           </Reveal>
         </div>
@@ -193,8 +194,8 @@ export default function App() {
         <div className="two">
           <Reveal cls="rr">
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-              <Img src="/asset3/Fav.jpg" alt="Auroville" style={{ width: '100%', aspectRatio: '3/4' }} />
-              <Img src="/asset3/04_auroville.jpg" alt="The tree" style={{ width: '60%', aspectRatio: '1/1', marginLeft: 'auto' }} />
+              <Img src={A + "Fav.jpg"} alt="Auroville" style={{ width: '100%', aspectRatio: '3/4' }} />
+              <Img src={A + "04_auroville.jpg"} alt="The tree" style={{ width: '60%', aspectRatio: '1/1', marginLeft: 'auto' }} />
             </div>
           </Reveal>
           <Reveal cls="rl" delay={0.18}>
@@ -256,15 +257,15 @@ export default function App() {
             </div>
           </Reveal>
           <Reveal cls="rl" delay={0.15}>
-            <Img src="/asset3/joy.jpg" alt="Joy" style={{ width: '100%', aspectRatio: '3/4' }} />
+            <Img src={A + "joy.jpg"} alt="Joy" style={{ width: '100%', aspectRatio: '3/4' }} />
           </Reveal>
         </div>
         <Reveal delay={0.12}>
           <div className="joy-grid" style={{ maxWidth: 980, width: '100%' }}>
-            <Img src="/asset3/joy1.jpg" alt="Joy" className="jbig" style={{ aspectRatio: '16/9' }} />
-            <Img src="/asset3/joy2.jpg" alt="Joy" style={{ aspectRatio: '3/4' }} />
-            <Img src="/asset3/joy3.jpg" alt="Joy" style={{ aspectRatio: '3/4' }} />
-            <Img src="/asset3/joy4.jpg" alt="Joy" style={{ aspectRatio: '3/4' }} />
+            <Img src={A + "joy1.jpg"} alt="Joy" className="jbig" style={{ aspectRatio: '16/9' }} />
+            <Img src={A + "joy2.jpg"} alt="Joy" style={{ aspectRatio: '3/4' }} />
+            <Img src={A + "joy3.jpg"} alt="Joy" style={{ aspectRatio: '3/4' }} />
+            <Img src={A + "joy4.jpg"} alt="Joy" style={{ aspectRatio: '3/4' }} />
           </div>
         </Reveal>
       </section>
@@ -274,10 +275,10 @@ export default function App() {
         <div className="two">
           <Reveal cls="rr">
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-              <Img src="/asset3/cat.jpg" alt="The cat" style={{ width: '100%', aspectRatio: '3/4' }} />
+              <Img src={A + "cat.jpg"} alt="The cat" style={{ width: '100%', aspectRatio: '3/4' }} />
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
-                <Img src="/asset3/cat1.jpg" alt="Cat" style={{ aspectRatio: '1/1' }} />
-                <Img src="/asset3/cat2.jpg" alt="Cat" style={{ aspectRatio: '1/1' }} />
+                <Img src={A + "cat1.jpg"} alt="Cat" style={{ aspectRatio: '1/1' }} />
+                <Img src={A + "cat2.jpg"} alt="Cat" style={{ aspectRatio: '1/1' }} />
               </div>
             </div>
           </Reveal>
@@ -330,20 +331,20 @@ export default function App() {
         </Reveal>
         <Reveal delay={0.1}>
           <div className="k-grid">
-            <Img src="/asset3/karnataka_01.jpg" alt="Day 1" className="ktall" style={{ gridRow: 'span 2' }} />
-            <Img src="/asset3/us_falls.jpg" alt="Falls" />
-            <Img src="/asset3/karnataka_05.jpg" alt="Day 2" />
-            <Img src="/asset3/karnataka_07.jpg" alt="Day 3" className="kwide" style={{ gridColumn: 'span 2' }} />
-            <Img src="/asset3/karnataka_10.jpg" alt="Day 4" />
-            <Img src="/asset3/karnataka_18.jpg" alt="Day 5" />
-            <Img src="/asset3/us_road.jpg" alt="The road" />
-            <Img src="/asset3/karnataka_19.jpg" alt="Day 7" />
+            <Img src={A + "karnataka_01.jpg"} alt="Day 1" className="ktall" style={{ gridRow: 'span 2' }} />
+            <Img src={A + "us_falls.jpg"} alt="Falls" />
+            <Img src={A + "karnataka_05.jpg"} alt="Day 2" />
+            <Img src={A + "karnataka_07.jpg"} alt="Day 3" className="kwide" style={{ gridColumn: 'span 2' }} />
+            <Img src={A + "karnataka_10.jpg"} alt="Day 4" />
+            <Img src={A + "karnataka_18.jpg"} alt="Day 5" />
+            <Img src={A + "us_road.jpg"} alt="The road" />
+            <Img src={A + "karnataka_19.jpg"} alt="Day 7" />
           </div>
         </Reveal>
         <Reveal delay={0.1}>
           <div className="k-grid">
             {['04', '06', '08', '09', '11', '12', '14', '15', '16', '17', '20', '21'].map(n => (
-              <Img key={n} src={`/asset3/karnataka_${n}.jpg`} alt="Karnataka" />
+              <Img key={n} src={`${A}karnataka_${n}.jpg`} alt="Karnataka" />
             ))}
           </div>
         </Reveal>
@@ -359,17 +360,17 @@ export default function App() {
       {/* ── 7 · THE WITCH & THE MOON ── */}
       <section ref={setRef(7)} className="dark-sec" style={{ flexDirection: 'column', gap: 60, paddingTop: 110, paddingBottom: 110 }}>
         <Reveal delay={0.1}>
-          <Img src="/asset3/Fav4.jpg" alt="Soaked in the monsoon" style={{ width: '60%', maxWidth: 560, aspectRatio: '3/4', margin: '0 auto' }} />
+          <Img src={A + "Fav4.jpg"} alt="Soaked in the monsoon" style={{ width: '60%', maxWidth: 560, aspectRatio: '3/4', margin: '0 auto' }} />
         </Reveal>
         <div className="trio" style={{ maxWidth: 1080, width: "100%", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
           <Reveal cls="rv" delay={0.05}>
-            <Img src="/asset3/us_small.jpg" alt="Together" style={{ width: '100%', aspectRatio: '3/4' }} />
+            <Img src={A + "us_small.jpg"} alt="Together" style={{ width: '100%', aspectRatio: '3/4' }} />
           </Reveal>
           <Reveal cls="rv" delay={0.15}>
-            <Img src="/asset3/us_mirror.jpg" alt="Favourite" style={{ width: '100%', aspectRatio: '3/4' }} />
+            <Img src={A + "us_mirror.jpg"} alt="Favourite" style={{ width: '100%', aspectRatio: '3/4' }} />
           </Reveal>
           <Reveal cls="rv" delay={0.25}>
-            <Img src="/asset3/karnataka_13.jpg" alt="Karnataka" style={{ width: '100%', aspectRatio: '3/4' }} />
+            <Img src={A + "karnataka_13.jpg"} alt="Karnataka" style={{ width: '100%', aspectRatio: '3/4' }} />
           </Reveal>
         </div>
         <Reveal delay={0.2}>
