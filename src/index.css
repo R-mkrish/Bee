@@ -306,3 +306,8 @@ section {
   .cg-item.acc::after { display: none; }
   .ct-big { font-size: 2.6rem; }
 }
+
+@media (max-width: 768px) {
+  section > .rv:has(> .cg) { width: 100%; }
+  .cg { max-width: 100%; }
+}

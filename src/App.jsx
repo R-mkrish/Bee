@@ -356,7 +356,6 @@ export default function App() {
         <Reveal delay={0.1}>
           <Collage rows={14} unit={52}>
             <Tile c="1 / 4" r="1 / 7" tone="dark">
-              <p className="ct-lbl">The first chapter</p>
               <p className="ct-txt">Clouds low and full over the Western Ghats. We stopped trying to stay dry.</p>
               <p className="ct-big">8<small> days</small></p>
             </Tile>
