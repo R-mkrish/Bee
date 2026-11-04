@@ -253,7 +253,7 @@ export default function App() {
 
       {/* ── 4 · JOY ── */}
       <section ref={setRef(4)} style={{ background: 'var(--bg)', flexDirection: 'column', gap: 52 }}>
-        <div className="two" style={{ gap: 64 }}>
+        <div className="two joy-top" style={{ gap: 64 }}>
           <Reveal>
             <div className="col">
               <h2 className="htitle">She came back,<br />and brought<br /><strong>joy</strong></h2>

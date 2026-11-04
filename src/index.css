@@ -311,3 +311,14 @@ section {
   section > .rv:has(> .cg) { width: 100%; }
   .cg { max-width: 100%; }
 }
+
+/* Joy section on mobile: text beside photo, small trio row */
+@media (max-width: 768px) {
+  .two.joy-top { grid-template-columns: 1.15fr 1fr !important; gap: 14px !important; align-items: start; }
+  .joy-top > * { min-width: 0; }
+  .joy-top .htitle { font-size: 1.15rem; }
+  .joy-top .poem { font-size: .72rem; line-height: 1.7; }
+  .joy-top .prose { font-size: .68rem; line-height: 1.6; }
+  .joy-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 6px; }
+  .joy-grid .jbig { grid-column: 1 / -1 !important; }
+}
