@@ -23,6 +23,30 @@ function Img({ src, alt, style, className = '' }) {
   )
 }
 
+function Collage({ rows, unit, children }) {
+  return (
+    <div className="cg" style={{ '--rows': rows, '--unit': `${unit}px` }}>
+      {children}
+    </div>
+  )
+}
+
+function Ph({ src, c, r, acc = '' }) {
+  return (
+    <div className={`cg-item ${acc ? 'acc acc-' + acc : ''}`} style={{ '--c': c, '--r': r }}>
+      <Img src={`${A}${src}.jpg`} alt="Karnataka" style={{ width: '100%', height: '100%' }} />
+    </div>
+  )
+}
+
+function Tile({ c, r, tone, vertical, children }) {
+  return (
+    <div className={`cg-item cg-tile ${tone}${vertical ? ' vert' : ''}`} style={{ '--c': c, '--r': r }}>
+      {children}
+    </div>
+  )
+}
+
 function Reveal({ children, cls = 'rv', delay = 0 }) {
   const ref = useRef(null)
   useEffect(() => {
@@ -330,23 +354,40 @@ export default function App() {
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <div className="k-grid">
-            <Img src={A + "karnataka_01.jpg"} alt="Day 1" className="ktall" style={{ gridRow: 'span 2' }} />
-            <Img src={A + "us_falls.jpg"} alt="Falls" />
-            <Img src={A + "karnataka_05.jpg"} alt="Day 2" />
-            <Img src={A + "karnataka_07.jpg"} alt="Day 3" className="kwide" style={{ gridColumn: 'span 2' }} />
-            <Img src={A + "karnataka_10.jpg"} alt="Day 4" />
-            <Img src={A + "karnataka_18.jpg"} alt="Day 5" />
-            <Img src={A + "us_road.jpg"} alt="The road" />
-            <Img src={A + "karnataka_19.jpg"} alt="Day 7" />
-          </div>
+          <Collage rows={14} unit={52}>
+            <Tile c="1 / 4" r="1 / 7" tone="dark">
+              <p className="ct-lbl">The first chapter</p>
+              <p className="ct-txt">Clouds low and full over the Western Ghats. We stopped trying to stay dry.</p>
+              <p className="ct-big">8<small> days</small></p>
+            </Tile>
+            <Ph src="karnataka_07" c="4 / 10" r="1 / 7" acc="tr" />
+            <Ph src="us_falls" c="10 / 13" r="1 / 7" />
+            <Ph src="karnataka_05" c="1 / 5" r="7 / 10" acc="tl" />
+            <Ph src="karnataka_01" c="5 / 9" r="7 / 13" />
+            <Ph src="karnataka_10" c="9 / 13" r="7 / 11" acc="br" />
+            <Ph src="us_road" c="1 / 5" r="10 / 15" />
+            <Ph src="karnataka_18" c="5 / 9" r="13 / 15" />
+            <Ph src="karnataka_19" c="9 / 13" r="11 / 15" acc="bl" />
+          </Collage>
         </Reveal>
         <Reveal delay={0.1}>
-          <div className="k-grid">
-            {['04', '06', '08', '09', '11', '12', '14', '15', '16', '17', '20', '21'].map(n => (
-              <Img key={n} src={`${A}karnataka_${n}.jpg`} alt="Karnataka" />
-            ))}
-          </div>
+          <Collage rows={14} unit={50}>
+            <Ph src="karnataka_04" c="1 / 5" r="1 / 5" acc="tl" />
+            <Ph src="karnataka_06" c="5 / 8" r="1 / 5" />
+            <Ph src="karnataka_08" c="8 / 13" r="1 / 5" acc="tr" />
+            <Tile c="1 / 3" r="5 / 10" tone="dark" vertical>
+              <p className="ct-v">The road was the story</p>
+            </Tile>
+            <Ph src="karnataka_09" c="3 / 7" r="5 / 10" />
+            <Ph src="karnataka_11" c="7 / 10" r="5 / 7" />
+            <Ph src="karnataka_12" c="7 / 10" r="7 / 10" acc="br" />
+            <Ph src="karnataka_14" c="10 / 13" r="5 / 10" />
+            <Ph src="karnataka_15" c="1 / 4" r="10 / 15" acc="bl" />
+            <Ph src="karnataka_16" c="4 / 8" r="10 / 13" />
+            <Ph src="karnataka_17" c="8 / 13" r="10 / 13" acc="tr" />
+            <Ph src="karnataka_20" c="4 / 9" r="13 / 15" />
+            <Ph src="karnataka_21" c="9 / 13" r="13 / 15" />
+          </Collage>
         </Reveal>
         <Reveal delay={0.15}>
           <p className="prose" style={{ maxWidth: 620, textAlign: 'center', fontStyle: 'italic', fontSize: '1.05rem', color: 'var(--fg-mid)' }}>
